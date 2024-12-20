@@ -1,0 +1,21 @@
+Model Evaluation Results
+========================
+
+Configuration:
+- Batch Size: 128
+- Epochs: 2
+- Learning Rate: 0.01
+
+Overall Accuracy: 87.01%
+
+Per-Class Accuracy:
+- T-shirt/top: 73.20%
+- Trouser: 96.80%
+- Pullover: 82.40%
+- Dress: 90.10%
+- Coat: 79.20%
+- Sandal: 92.30%
+- Shirt: 70.20%
+- Sneaker: 95.90%
+- Bag: 95.80%
+- Ankle boot: 94.20%

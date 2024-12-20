@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="fashion-mnist-project">
+    <directory name="src" description="Source code directory">
+        <file name="__init__.py" description="Makes src a Python package"/>
+        <file name="config.py" description="Hyperparameter configuration">
+            <component name="TrainingConfig">
+                <parameter name="batch_size" default="64"/>
+                <parameter name="num_epochs" default="3"/>
+                <parameter name="learning_rate" default="0.01"/>
+            </component>
+        </file>
+        <file name="model.py" description="CNN model architecture">
+            <component name="FashionCNN">
+                <layer name="conv_layers" type="Sequential">
+                    <conv name="conv1" in_channels="1" out_channels="8" kernel_size="5"/>
+                    <conv name="conv2" in_channels="8" out_channels="16" kernel_size="5"/>
+                </layer>
+                <layer name="fc_layers" type="Sequential">
+                    <linear name="fc1" in_features="256" out_features="120"/>
+                    <linear name="fc2" in_features="120" out_features="10"/>
+                </layer>
+            </component>
+        </file>
+        <file name="train.py" description="Training logic">
+            <function name="get_data_loaders"/>
+            <function name="train_model"/>
+        </file>
+        <file name="evaluate.py" description="Evaluation and metrics">
+            <function name="evaluate_model"/>
+            <function name="save_evaluation_results"/>
+            <function name="plot_class_accuracies"/>
+        </file>
+    </directory>
+    <directory name="data" description="Dataset storage">
+        <note>Stores Fashion MNIST dataset files</note>
+    </directory>
+    <directory name="models" description="Saved model checkpoints">
+        <note>Stores trained model weights and architectures</note>
+    </directory>
+    <directory name="results" description="Evaluation results">
+        <note>Stores accuracy metrics and visualizations</note>
+    </directory>
+    <file name="main.py" description="Entry point script">
+        <function name="main"/>
+    </file>
+</project>
